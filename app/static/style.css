@@ -1,0 +1,56 @@
+/* Estilos Personalizados para My Task App */
+
+/* Personalización de la Barra de Navegación */
+.navbar-custom {
+    background-color: #333; /* Fondo plomo */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.navbar-custom .navbar-brand {
+    font-weight: bold; /* Texto en negrita para destacarlo */
+    color: #fff; /* Texto en blanco por defecto */
+    transition: color 0.3s; /* Transición de color en 0.3 segundos */
+}
+
+/* Cambio de color de letra en hover */
+.navbar-custom .navbar-brand:hover {
+    color: #007bff; /* Cambia el color de letra a azul en hover */
+}
+
+/* Personalización del Listado de Menú */
+.navbar-custom .navbar-nav .nav-item .nav-link {
+    color: #fff; /* Texto en blanco */
+    transition: background-color 0.3s; /* Transición de fondo en 0.3 segundos */
+}
+
+/* Cambio de color de fondo en hover */
+.navbar-custom .navbar-nav .nav-item .nav-link:hover {
+    background-color: #333; /* Cambia el fondo al color del fondo del encabezado en hover */
+    color: #fff; /* Texto en blanco en hover */
+}
+
+/* Personalización del Cuerpo de la Página */
+.main-content {
+    font-family: 'Helvetica Neue', sans-serif;
+    color: #4a4a4a; /* Texto en un gris oscuro para mejor legibilidad */
+    background-color: #f8f9fa; /* Fondo ligeramente gris para el contenido */
+    padding: 20px; /* Espaciado alrededor del contenido */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+    margin-top: 20px; /* Espaciado en la parte superior del contenido */
+    margin-bottom: 40px; /* Espaciado en la parte inferior del contenido */
+}
+
+/* Personalización del Footer */
+.footer-custom {
+    background-color: #343a40; /* Fondo gris oscuro */
+    color: #dcdcdc; /* Texto en un gris claro */
+    padding: 15px 0; /* Espaciado superior e inferior */
+    font-size: 0.9em; /* Tamaño de letra ligeramente más pequeño */
+    text-align: center; /* Alineación del texto al centro */
+}
+
+/* Ajustes adicionales */
+.container {
+    margin-top: 30px; /* Espaciado en la parte superior del contenido */
+}

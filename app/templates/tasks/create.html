@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+<!-- Extiende la plantilla base.html para heredar su estructura -->
+
+{% block content %}
+<!-- Define un bloque llamado 'content' que se insertará en la plantilla base.html -->
+
+  <h2 class="my-4">Crear Nueva Tarea</h2>
+  <!-- Título de la página para crear una nueva tarea -->
+
+  <form method="post" class="mb-4">
+    <!-- Formulario que envía datos mediante el método POST -->
+    <div class="mb-3">
+      <label for="titulo" class="form-label">Título</label>
+      <!-- Etiqueta y campo de entrada para el título de la tarea -->
+      <input type="text" class="form-control" name="titulo" id="titulo" required>
+      <!-- Campo de entrada de texto para el título, con validación requerida -->
+    </div>
+    <div class="mb-3">
+      <label for="contenido" class="form-label">Contenido</label>
+      <!-- Etiqueta y área de texto para el contenido de la tarea -->
+      <textarea class="form-control" name="contenido" id="contenido" rows="4" required></textarea>
+      <!-- Área de texto para el contenido, con validación requerida y 4 filas de altura -->
+    </div>
+    <button type="submit" class="btn btn-primary">Guardar</button>
+    <!-- Botón para enviar el formulario y guardar la tarea -->
+  </form>
+  <a href="{{ url_for('tasks.index') }}" class="btn btn-secondary">Volver a la lista de tareas</a>
+  <!-- Enlace para volver a la lista de tareas -->
+{% endblock %}
+<!-- Fin del bloque 'content' -->

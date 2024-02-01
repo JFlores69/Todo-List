@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+<!-- Extiende la plantilla base.html para heredar su estructura -->
+
+{% block content %}
+<!-- Define un bloque llamado 'content' que se insertará en la plantilla base.html -->
+
+  <h2 class="my-4">Lista de Tareas</h2>
+  <!-- Título de la página que muestra la lista de tareas -->
+
+  <ul class="list-group">
+    <!-- Lista desordenada con clases de Bootstrap para presentar la lista de tareas -->
+    {% for task in tasks %}
+    <!-- Comienza un bucle para iterar a través de las tareas en la variable 'tasks' -->
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      <!-- Elemento de lista con clases de Bootstrap para presentar cada tarea -->
+        <a href="{{ url_for('tasks.view', id=task['id']) }}" class="me-2">
+            {{ task['titulo'] }}
+        </a>
+        <!-- Enlace para ver los detalles de la tarea y muestra el título de la tarea -->
+        <span class="flex-grow-1"></span>
+        <!-- Espacio en blanco flexible para alinear elementos -->
+        <a href="{{ url_for('tasks.update', id=task['id']) }}" class="btn btn-outline-primary btn-sm me-2">
+            <i class="fas fa-edit"></i> Editar
+        </a>
+        <!-- Enlace para editar la tarea y muestra un icono de edición -->
+        <a href="{{ url_for('tasks.view', id=task['id']) }}" class="btn btn-outline-info btn-sm me-2">
+            <i class="fas fa-eye"></i> Ver
+        </a>
+        <!-- Enlace para ver los detalles de la tarea y muestra un icono de vista -->
+        <form method="post" action="{{ url_for('tasks.delete', id=task['id']) }}" class="d-inline" onsubmit="return confirm('¿Estás seguro de que deseas eliminar esta tarea?');">
+            <!-- Formulario para eliminar la tarea y muestra un mensaje de confirmación al usuario -->
+            <button type="submit" class="btn btn-outline-danger btn-sm">
+                <i class="fas fa-trash"></i> Eliminar
+            </button>
+            <!-- Botón para enviar el formulario y eliminar la tarea, muestra un icono de eliminación -->
+        </form>
+    </li>
+    <!-- Fin del elemento de lista de tarea -->
+    {% endfor %}
+    <!-- Fin del bucle de tareas -->
+  </ul>
+  <!-- Fin de la lista desordenada de tareas -->
+
+  <a href="{{ url_for('tasks.create') }}" class="btn btn-success mt-3">Crear Nueva Tarea</a>
+  <!-- Enlace para crear una nueva tarea y muestra un botón de éxito -->
+{% endblock %}
+<!-- Fin del bloque 'content' -->

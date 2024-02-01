@@ -1,0 +1,7 @@
+DROP TABLE IF EXISTS task;
+
+CREATE TABLE task(
+    id INTEGER PRIMARY KEY AUTOINCREMENT, 
+    titulo TEXT NOT NULL,
+    contenido TEXT NOT NULL
+);

@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+<!-- Extiende la plantilla base.html para heredar su estructura -->
+
+{% block content %}
+<!-- Define un bloque llamado 'content' que se insertará en la plantilla base.html -->
+
+    <h2 class="my-4">Detalles de Tarea</h2>
+    <!-- Título de la página para mostrar los detalles de una tarea -->
+
+    <div class="mb-3">
+        <div class="card">
+            <!-- Utiliza una tarjeta Bootstrap para presentar los detalles de la tarea -->
+            <div class="card-header">
+                Título de la Tarea
+                <!-- Encabezado de la tarjeta que muestra el título de la tarea -->
+            </div>
+            <div class="card-body">
+                <!-- Cuerpo de la tarjeta -->
+                <p class="card-text">{{ task['titulo'] }}</p>
+                <!-- Muestra el título de la tarea en el cuerpo de la tarjeta -->
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <div class="card">
+            <!-- Utiliza otra tarjeta Bootstrap para presentar los detalles de la tarea -->
+            <div class="card-header">
+                Contenido de la Tarea
+                <!-- Encabezado de la tarjeta que muestra el contenido de la tarea -->
+            </div>
+            <div class="card-body">
+                <!-- Cuerpo de la tarjeta -->
+                <p class="card-text">{{ task['contenido'] }}</p>
+                <!-- Muestra el contenido de la tarea en el cuerpo de la tarjeta -->
+            </div>
+        </div>
+    </div>
+
+    <a href="{{ url_for('tasks.index') }}" class="btn btn-primary">Volver a la lista de tareas</a>
+    <!-- Enlace para volver a la lista de tareas con un botón de Bootstrap -->
+{% endblock %}
+<!-- Fin del bloque 'content' -->
